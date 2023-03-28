@@ -1,0 +1,7 @@
+{% comment %} {% extends 'base.html' %} {% endcomment %}
+
+{% block content %}
+    <h1>Welcome {{ user.name }}!</h1>
+    <p>You have {{ user.points }} points and have completed {{ user.tasks_completed.count }} tasks.</p>
+    <a href="{% url 'apps_list' %}">View available apps</a>
+{% endblock %}

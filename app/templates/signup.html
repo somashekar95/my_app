@@ -1,0 +1,17 @@
+{% comment %} {% extends 'base.html' %} {% endcomment %}
+
+{% block content %}
+    <h1>Signup</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username"><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"><br>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br>
+        <label for="profile_picture">Profile Picture:</label>
+        <input type="file" id="profile_picture" name="profile_picture"><br>
+        <input type="submit" value="Signup">
+    </form>
+{% endblock %}

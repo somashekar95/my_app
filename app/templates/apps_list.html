@@ -1,0 +1,12 @@
+{% comment %} {% extends 'base.html' %} {% endcomment %}
+
+{% block content %}
+    <h1>Available Apps</h1>
+    <ul>
+        {% for app in apps %}
+            <li><a href="{% url 'app_detail' app.id %}">{{ app.name }}</a> - {{ app.points }} points</li>
+        {% empty %}
+            <li>No apps available.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

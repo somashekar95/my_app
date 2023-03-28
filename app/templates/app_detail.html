@@ -1,0 +1,12 @@
+{% comment %} {% extends 'base.html' %} {% endcomment %}
+
+{% block content %}
+    <h1>{{ app.name }}</h1>
+    <p>{{ app.points }} points</p>
+    <form method="post" enctype="multipart/form-data" action="{% url 'task_submit' task.id %}">
+        {% csrf_token %}
+        <label for="screenshot">Screenshot:</label>
+        <input type="file" id="screenshot" name="screenshot"><br>
+        <input type="submit" value="Submit">
+    </form>
+{% endblock %}
